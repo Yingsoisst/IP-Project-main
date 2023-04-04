@@ -24,14 +24,14 @@ $row = mysqli_fetch_assoc($result);
           width: 990px;
           left: 200px;
           top: -300px;
-          z-index: 1;
+          z-index: 0;
 
       }
       .block1 {
         left: float;
         width: 300px;
         height: 350px;
-        margin-left: 220px; 
+        margin-left: 220px;
         margin-top: 30px;
         box-shadow: 10px 15px 10px #333;
         
@@ -59,7 +59,7 @@ $row = mysqli_fetch_assoc($result);
 </style>
 
   
-<header id="header" class=" bg-white bg-opacity-5 shadow-lg rounded" style="background-color: white;z-index: 2;">
+<header id="header" class=" bg-white bg-opacity-5 shadow-lg rounded" style="background-color: white;z-index: 1;">
   <div class="container m px-2 flex justify-between items-center ">
 
     <!-- logo -->
@@ -181,13 +181,13 @@ $row = mysqli_fetch_assoc($result);
     <div class=" ">
         <div  class=" bg-orange-100 bg-blur-sm  w-64 justify-center flex-col mt-5 mr-5 ml-5 mb-5 rounded-md drop-shadow-lg shadow-inner">
               <script language="JavaScript">
-              
+              <!--
               function MM_jumpMenu(targ,selObj,restore){ //v3.0
                // eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
                window.open(selObj.options[selObj.selectedIndex].value);
                 if (restore) selObj.selectedIndex=0;
               }
-              
+              //-->
              </script>
               <select name="menu1" onchange="MM_jumpMenu('parent',this,0)" class="select select-success w-40 h-9 mt-8 ml-12 rounded-md">
                   <option disabled selected>หมวดหมู่</option>
@@ -216,10 +216,8 @@ $row = mysqli_fetch_assoc($result);
                 </div>
                 <div>
                   <div class="ml-24 mt-5 mb-5">
-                      <a href="setting.php">
-                      <svg class="h-9 lg:h-10 p-2 text-black" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16"> 
-                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/> 
-                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/> </svg>
+                      <a href="record.php">
+                      <svg class="h-9 lg:h-10 p-2 text-black" aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16"> <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/> <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/> </svg>
                       </a>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 <?php include('server.php'); 
 session_start();
 $sql = mysqli_query($conn,"SELECT * FROM member WHERE member_id = '".$_SESSION['id']."'");
-$row = mysqli_fetch_array($sql);
+$row1 = mysqli_fetch_array($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">

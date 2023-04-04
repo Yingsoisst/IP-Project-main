@@ -1,7 +1,7 @@
 <?php include('server.php'); 
 session_start();
 
-$sql = mysqli_query($conn,"SELECT member_id FROM product WHERE member_id = '".$_SESSION['id']."'");
+$sql = mysqli_query($conn,"SELECT * FROM member WHERE member_id = '".$_SESSION['id']."'");
 $row = mysqli_fetch_array($sql);
 
     //delete product
@@ -72,5 +72,5 @@ $row = mysqli_fetch_array($sql);
 
 
 </body>
-<?php include 'footer.php'; ?>
+
 </html>

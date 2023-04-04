@@ -1,4 +1,15 @@
-<?php include('server.php'); ?>
+<?php include('server.php');
+// ตรวจสอบว่าเข้าสู่ระบบหรือไม่
+session_start();
+if(isset($_SESSION["signin"]) && $_SESSION["signin"] === true){
+    // หากเข้าสู่ระบบแล้ว ใช้ header ไปยังหน้าที่ต้องการ
+    header("location: index.php");
+    exit;
+} else {
+    // หากยังไม่ได้เข้าสู่ระบบ ใช้ header ไปยังหน้า login
+    header("location: createAccount.php");
+    exit;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

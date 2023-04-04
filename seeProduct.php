@@ -1,9 +1,12 @@
 <?php include('server.php'); 
 session_start();
 
+//
 $sql = mysqli_query($conn,"SELECT * FROM member WHERE member_id = '".$_SESSION['id']."'");
 $row = mysqli_fetch_array($sql);
 
+
+// ดึงข้อมูลจากตารางproduct
 $id = $_GET['id'];
 $query = "SELECT * FROM product WHERE product_id = $id";
 $result = mysqli_query($conn, $query);
@@ -32,7 +35,7 @@ $row_product = mysqli_fetch_array($result);
 <body>
     <?php include 'header.php'; ?>
          
-    <div class="bg-orange-200 pl-20 ml-36 mt-10 pt-12 rounded-md flex flex-row" style="width: 1200px;height: 600px;">
+    <div class="bg-white pl-20 ml-36 mt-10 pt-12 rounded-md flex flex-row" style="width: 1200px;height: 500px;">
     
         <div class="bg-slate-100  rounded-lg" style="width: 500px;height: 300px;">
             <!-- This is an example component -->
@@ -44,7 +47,7 @@ $row_product = mysqli_fetch_array($result);
                     <!-- Item 1 -->
                     <div >
                       <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-amber-800 -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800"></span>
-                      <img src="images/<?php echo $row_product['product_image']; ?>">
+                      <img class="w-full rounded-md h-96 md:h-auto md:w-80" src="images/<?php echo $row_product['product_image']; ?>">
                     </div>
                 </div>
         </div>
@@ -54,7 +57,7 @@ $row_product = mysqli_fetch_array($result);
        
     </div>
 
-        <div class="bg-orange-200 ml-36 " style="width: 500px;height: 280px;">
+        <div class="bg-white ml-36 " style="width: 500px;height: 280px;">
             <div class="grid gap-lg">
                 <div class="sc-1q2fzk2-1 ePXdbe">
                     
@@ -95,10 +98,10 @@ $row_product = mysqli_fetch_array($result);
                                
                             </div>
                         </div>
-                    <div class="bg-orange-100 mt-5 rounded-md " style="width: 400px;height: 170px;">
+                    <div class="bg-white mt-5 rounded-md " style="width: 400px;height: 170px;">
 
-            <div class="bg-orange-100 grid">
-                <div class=" bg-orange-100">
+            <div class="bg-white grid">
+                <div class=" bg-white">
                     <h2 class="m-0 mb-md mt-2 ml-2 block font-kaidee text-body-3 font-bold">รายละเอียดสินค้า</h2>
                     <div class="sc-1ir8548-0 kPXKAP ">
                         <span type="Body4-System-Regular" class="sc-3tpgds-0 dNQPgd sc-1ir8548-2 iErNFt">
@@ -109,7 +112,7 @@ $row_product = mysqli_fetch_array($result);
         
                 </div> 
                   <div class=" flex justify-center "> 
-                  <button aria-label="สร้างห้องใหม่" class="flex flex-row ssc-16yqz13-0 eiEwND sc-1dcykbe-0 hvgFTg bg-amber-700 rounded-md mr-10 mt-5 text-white" style="height: 30px; width: 130px;" data-testid="seller-profile-chat-button " mode="contained" scale="medium" tabindex="0">
+                  <button   aria-label="สร้างห้องใหม่" class="flex flex-row ssc-16yqz13-0 eiEwND sc-1dcykbe-0 hvgFTg bg-amber-700 rounded-md mr-10 mt-5 text-white" style="height: 30px; width: 130px;" data-testid="seller-profile-chat-button " mode="contained" scale="medium" tabindex="0">
                      <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px">
                         <path d="M14.19 4H9.88A6 6 0 0 0 4 9.51v2.13a6 6 0 0 0 5.18 5.45v.09a2.59 2.59 0 0 1-.69 1.45.71.71 0 0 0-.18.37 1.09 1.09 0 0 0 0 .18.6.6 0 0 0 0 .23.75.75 0 0 0 .59.5c.12.01.24.01.36 0 1.84 0 3.83-2 4.52-2.81h.35A6 6 0 0 0 20 11.03v-.92A6 6 0 0 0 14.19 4Zm0 11.56h-.71a.758.758 0 0 0-.55.28A11 11 0 0 1 10.6 18c0-.11.05-.21.07-.31.02-.1 0 0 0-.06v-.93a2.596 2.596 0 0 0-.13-.58.75.75 0 0 0-.7-.48 4.47 4.47 0 0 1-4.34-4.59v-.92a4.48 4.48 0 0 1 4.38-4.56h4.31a4.45 4.45 0 0 1 4.34 4.08V11.49a4.44 4.44 0 0 1-4.34 4.1v-.03Z"></path>
                                 </svg>ซื้อ</button>
@@ -134,24 +137,23 @@ $row_product = mysqli_fetch_array($result);
         
     </div> <center>
         
-    <div class="bg-orange-500 pl-20 ml-36 mt-10 mb-10 pt-12 rounded-md flex flex-row" style="width: 670px;height: 240px;">
+    <div class="bg-white pl-20  mt-10 mb-10 pt-12 rounded-md flex flex-row" style="width: 670px;height: 240px;">
     <?php 
                 //ดึงข้อมูลในตาราง product มาแสดง
                 $select1 = mysqli_query($conn, "SELECT member_id FROM `product` WHERE product_id = $id");
                 $row = mysqli_fetch_array($select1);
                 $member = $row['member_id'];
                 
-					$select = mysqli_query($conn, "SELECT `member_name`,`member_image` FROM `member` WHERE member_id = $member" ) or die('query failed');
+					$select = mysqli_query($conn, "SELECT `member_name`,`member_image`, `member_id` FROM `member` WHERE member_id = $member" ) or die('query failed');
                     //ถ้าจำนวนแถวในตารางproductมากกว่า 0 ก็ให้ดึงแถวในตารางมาแสดง
 					if (mysqli_num_rows($select) > 0) {
 						$row = mysqli_fetch_assoc($select); {
-                            
 				?>
 				<tr>
-        <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" style="width: 500px; height: 140px;" >
-            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" style="width: 105px;" src="images/<?php echo $row['member_image']; ?>" alt="">
+        <a  href="profileshop.php?ids=<?php echo $row['member_id']; ?>" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" style="width: 500px; height: 140px;" >
+            <img class="object-cover w-full rounded-md h-96 md:h-auto md:w-48   ml-5" style="width: 105px;" src="images/<?php echo $row['member_image']; ?>" alt="">
             <div class="flex flex-col justify-between  leading-normal ">
-                <h5 class="mb-2 text-2xl  font-bold tracking-tight text-gray-900 dark:text-white"> <?php echo $row['member_name'] ; ?></h5>
+                <h5 href="profileshop.php?ids=<?php echo $row['member_id']; ?>"class="mb-2 text-2xl  font-bold tracking-tight text-gray-900 dark:text-white ml-5"> <?php echo $row['member_name'] ; ?></h5>
             </div>  
         </a>
     </div>
@@ -163,7 +165,7 @@ $row_product = mysqli_fetch_array($result);
     ?>
      
 </body>
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?> 
 
      
 

@@ -1,4 +1,7 @@
-<?php include('server.php'); ?>
+<?php 
+session_start();
+include('server.php'); 
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
 <head>
@@ -29,7 +32,7 @@
                   <button class=" " >บัญชีธนาคาร</button>
                 </a>                   
                 <a class="text-black  " href="ที่อยู่.html">
-                  <button class=" " >ที่อยู่</button>
+                  <button href="address.php" class=" " >ที่อยู่</button>
                 </a>                  
                  <a class="text-black  " href="เปลี่ยนรหัสผ่าน.html">
                   <button class="b ">เปลี่ยนรหัสผ่าน</button>

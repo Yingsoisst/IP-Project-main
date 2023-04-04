@@ -22,7 +22,6 @@ if(isset($_POST['add_product'])){
     $image3 = $_FILES['p_image3']['name'];
     $image_temp_name3 = $_FILES['p_image3']['tmp_name'];
     $folder_image3 = 'images/'.$image3;
-    
 //เป็นการเพิ่มข้อมูลเข้าในฐานข้อมูลที่ตาราง product 
 
 $mysql = "INSERT INTO `check_product` (`check_product_name`, `check_product_image`, `check_product_image2`, `check_product_image3`,

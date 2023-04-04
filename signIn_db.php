@@ -7,7 +7,8 @@
     if (isset($_POST['signin'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        
+        // บังคับให้กรอกข้อมูล
         if (empty($username)) {
             array_push($errors, "Email is requird");
         }
@@ -18,15 +19,23 @@
         //     $_SESSION['error'] = 'รหัสผ่านต้องมีความยาวอย่างน้อย 8 ตัวอักษร';
         //     header('location: signIn.php');
         // }
-
+        
+        // ดึงรหัสผ่านกับชื่อผู้ใช้มาเปรียบเทียบ
         $user_check_query = "SELECT * FROM member WHERE member_name = '$username' AND member_password = '$password' ";
         $query = mysqli_query($conn, $user_check_query);
         $result = mysqli_fetch_assoc($query);
 
         if ($result) {
-            if ($result['member_name'] === $username) {
+
+            // เช็คว่าชื่อผู้ใช้กับรหัสผ่านตรงกับในฐานข้อมูลไหม
+            if ($result['member_name'] === $username) { // 
                 if ($result['member_password'] === $password) {
-                    if ($result['urole'] === 'admin') {
+
+
+                    // login เข้ามาเป็น user หรือ admin
+
+                    //admin
+                    if ($result['urole'] === 'admin') {  
                         $_SESSION['admin_login'] = $result['member_id'];
                         require_once 'server.php';
                         $row = $result;
@@ -35,7 +44,10 @@
                         $_SESSION['img'] = $row['member_image'];
                         header("location: AdminHomepage.php");
 
-                    } else if ($result['urole'] === 'user') {
+
+                    } 
+                    // user
+                    else if ($result['urole'] === 'user') {
                         $_SESSION['user_login'] = $result['member_id'];
                         require_once 'server.php';
                         $row = $result;

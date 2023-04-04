@@ -20,7 +20,7 @@
         backdrop-filter: blur(5px);
     }
 </style>
-    <div class="bg-neutral-500  ml-56 mt-20  shadow-inner rounded-md flex flex-row drop-shadow-lg" style="width: 1000px;height: 600px;">
+    <div class="bg-neutral-500  ml-56  mt-12  shadow-inner rounded-md flex flex-row drop-shadow-lg" style="width: 1000px;height: 600px;">
        <form action="signIn_db.php" method="post">
         <div class="bg-orange-200 rounded-l-lg " style="width: 500px; height: 600px;">
             <h1 class="text-orange-900 flex justify-center pt-10 pb-10 font-bold mb-4 " style="font-size: 50px;">Sign in</h1>

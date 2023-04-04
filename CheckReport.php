@@ -29,7 +29,7 @@ session_start();
 							
 						
 				?>
-            <div class="flex shadow-lg p-2 ">
+            <div class="flex shadow-lg p-2 bg-white">
                 <img src="images/<?php echo $row['member_image']; ?>" width="85" height="85">
                 <p  class="m-2">
                     ชื่อผู้ใช้ : <?php echo $row['member_name']; ?>

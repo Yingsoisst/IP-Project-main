@@ -1,7 +1,7 @@
 <?php include('server.php'); 
 
   $sql = mysqli_query($conn,"SELECT * FROM member WHERE member_id = '".$_SESSION['id']."'");
-  $row1 = mysqli_fetch_array($sql);
+  $row = mysqli_fetch_array($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@
     <div @click="open = !open" class=" border-b-4 border-transparent py-3" :class="{'border-indigo-700 transform transition duration-300 ': open}" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100">
       <div class="flex justify-center items-center space-x-3 cursor-pointer">
       <div class=" w-7 h-7rounded-full overflow-hidden border-2 dark:border-white  border-white">
-            <img src="images/<?php echo $_SESSION['img']; ?>" alt="" class="w-full h-full object-cover">
+            <img src="images/<?php echo $row['member_image']; ?>" alt="" class="w-full h-full object-cover">
           </div>
         <div class="font-semibold  dark:text-black text-gray-900 text-base">
           <div class="cursor-pointer"><?php echo $_SESSION['username'] ; ?></div>

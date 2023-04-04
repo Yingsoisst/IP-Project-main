@@ -8,8 +8,8 @@ $result1 = mysqli_query($conn, $query1);
 
     $id = $_GET['id'];
     $query = "SELECT * FROM report WHERE report_id = $id";
-    $result = mysqli_query($conn, $query) or die("Error in sql : $query".mysqli_error($query));
-    $row = mysqli_fetch_array($result);
+    $result = mysqli_query($conn, $query);
+    $row1 = mysqli_fetch_array($result);
 
 ?>
 <!DOCTYPE html>
@@ -36,8 +36,8 @@ $result1 = mysqli_query($conn, $query1);
 				?>
             <img class="rounded-md" src="images/<?php echo $row['member_image']; ?>" width="100" height="100">
             <p  class="m-2">
-                ชื่อผู้ใช้ : <?php echo $row['member_name']; ?><br>
-                Email : <?php echo $row['member_email']; ?>
+                ชื่อผู้ใช้ : <?php echo $row1['member_name']; ?><br>
+                Email : <?php echo $row1['member_email']; ?>
                 <br> 
             </p>
         </div>
@@ -47,7 +47,7 @@ $result1 = mysqli_query($conn, $query1);
     <div class="container mx-auto p-5 border-2 grid place-items-center ">
         <div class=""> 
             <p>
-            <?php echo $row['message']; ?>
+            <?php echo $row1['message']; ?>
             </p>
         </div>
     </div>
@@ -60,7 +60,7 @@ $result1 = mysqli_query($conn, $query1);
 							
 						
 				?>
-            <img src="images/<?php echo $row['report_image']; ?>" width="500" height="500">
+            <img src="images/<?php echo $row1['report_image']; ?>" width="500" height="500">
           
         </div>
 
