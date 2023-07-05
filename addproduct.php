@@ -10,7 +10,7 @@ if(isset($_POST['add_product'])){
     $name = $_POST['p_name'];
     $infor = $_POST['p_infor'];
     $category = $_POST['p_category'];
-    $quanity = $_POST['p_quanity'];
+    $quanity = 1;
     $price = $_POST['p_price'];
     $m_id = $_SESSION['id'];
     $image = $_FILES['p_image']['name'];
@@ -57,22 +57,22 @@ VALUES ('$name', '$image', '$image2', '$image3', '$infor', '$quanity', '$price',
 <body >
 <?php include 'header.php'; ?>
    
-<section class="max-w-4xl p-6 mx-auto rounded-md shadow-md bg-orange-200 mt-10 mb-10">
+<section class="max-w-4xl p-6 mx-auto rounded-md shadow-md bg-slate-800 mt-10 mb-10">
     <h1 class="text-xl font-bold text-white capitalize dark:text-white">เพิ่มสินค้า</h1>
     <form method="post" enctype="multipart/form-data">
         <div class="grid grid-row-1 gap-6 mt-4 ">
             <div>
-                <label class=" text-black" >ชื่อสินค้า </label>
+                <label class=" text-white" >ชื่อสินค้า </label>
                 <input id="name" type="text" name="p_name" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
             <div>
-                <label class=" text-black" >ข้อมูลสินค้า</label>
+                <label class=" text-white" >ข้อมูลสินค้า</label>
                 <textarea id="infor" type="textarea" name="p_infor" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></textarea>
             </div>
             <div>
                 
-                <label class=" text-black" >หมวดหมู่</label>
+                <label class=" text-white" >หมวดหมู่</label>
                 <select name="p_category" id="category" required>
                     <option value="">-Choose-</option>
                     <option value='เสื้อผ้า'>เสื้อผ้า</option>
@@ -96,18 +96,14 @@ VALUES ('$name', '$image', '$image2', '$image3', '$infor', '$quanity', '$price',
                 </select>
             </div>
             <div>
-                <label class=" text-black" >จำนวนสินค้า</label>
-                <input id="quanity" type="number" name ="p_quanity" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-            </div>
-            <div>
-                <label class=" text-black">ราคา</label>
+                <label class=" text-white">ราคา</label>
                 <input id="price" type="number" name ="p_price" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
             
             
             <div>
-                <label class="block text-sm font-medium text-black">
+                <label class="block text-sm font-medium text-white">
                 รูปสินค้า  
               </label>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-black border-dashed rounded-md">
@@ -131,7 +127,7 @@ VALUES ('$name', '$image', '$image2', '$image3', '$infor', '$quanity', '$price',
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-black">
+                <label class="block text-sm font-medium text-white">
                 รูปสินค้า2  
               </label>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-black border-dashed rounded-md">
@@ -155,7 +151,7 @@ VALUES ('$name', '$image', '$image2', '$image3', '$infor', '$quanity', '$price',
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-black">
+                <label class="block text-sm font-medium text-white">
                 รูปสินค้า3  
               </label>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-black border-dashed rounded-md">

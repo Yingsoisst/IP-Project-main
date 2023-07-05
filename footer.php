@@ -9,12 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-<footer style="position: raletive; bottom: 0;" class="w-full footer footer-center p-10 bg-primary text-primary-content bg-orange-300 flex justify-center" >
+<footer style="position: raletive; bottom: 0;" class="w-full footer footer-center p-10 bg-primary text-primary-conten bg-amber-500 justify-center" >
     <div>
       <p class="font-bold flex justify-center text-center">
            2MTrade <br/> Change second-hand goods
       </p> 
-      <p>2MTrade © 2023  </p>
+      <p class="font-bold flex justify-center text-center">2MTrade © 2023  </p>
     </div> 
     
   </footer>

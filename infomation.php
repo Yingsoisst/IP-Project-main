@@ -45,24 +45,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CreateAccount</title>
   <link rel="stylesheet" href="style.css">
-  <style>
+  <!-- <style>
     body {
         background-color: #e09129 !important;
     }
-</style>
+</style> -->
   
 </head>
 <body>
-<style>
+<!-- <style>
     body {
         /* background-color: #e09129 !important; */
-        background-image:url("images/back3.jpg");
+        background-image:url("../images/back3.jpg");
         background-size: 1520px 1100px;
         backdrop-filter: blur(5px);
     }
-</style>
+</style> -->
 
-<div class=" max-w-4xl p-6 mx-auto rounded-md shadow-md bg-orange-200 mt-6 mb-6">
+<div class=" max-w-4xl p-6 mx-auto rounded-md shadow-md  bg-white mt-6 mb-6  border-2 border-stone-950">
 <form class="w-full max-w-lg ml-10 mt-10" method="post" enctype="multipart/form-data">
   <div class=" flex flex-col ">
     <div class=" flex flex-row ml-28  ">

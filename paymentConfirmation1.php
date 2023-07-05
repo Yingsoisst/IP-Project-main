@@ -1,47 +1,36 @@
-<?php include('server.php');
-session_start();
+<?php
+    include('server.php');
+    session_start();
+    if(isset($_POST['conf'])){
+        $id = $_GET['id'];
+        $name = $_POST['name1'];
+        $phone = $_POST['phone1'];
+        $money = $_POST['money'];
+        $bank1 = $_POST['bank1'];
+        $date = $_POST['date'];
+        $picture = $_FILES['img_pay1']['name'];
+        $image_temp_name = $_FILES['img_pay1']['tmp_name'];
+        $folder_image = 'images/'.$picture;
+        $select = "SELECT * FROM payment_check WHERE payment_check = '$id'";
+        $in_pay = "UPDATE `payment_check` SET  `pay_name` = '$name', pay_mobile = '$phone',pay_money='$money', pay_image = '$picture', pay_bank = '$bank1', pay_date = '$date'
+                   WHERE `payment_check_id` = '$id'";
+        $insert_pay = mysqli_query($conn, $in_pay);
 
-if(isset($_POST['conf'])){
-    $name = $_POST['name1'];
-    $phone = $_POST['phone1'];
-    $money = $_POST['money'];
-    $bank1 = $_POST['bank1'];
-    $date = $_POST['date'];
-    $picture = $_FILES['img_pay1']['name'];
-    $image_temp_name = $_FILES['img_pay1']['tmp_name'];
-    $folder_image = 'images/'.$picture;
-
-    $address = $_SESSION['address'];
-
-    $member = $_SESSION['id'];
-
-    $insert = "INSERT INTO `payment_check` ( `check_product_id`, `check_product_name`, `check_product_image`, `check_product_price/piece`, `check_member_id`, check_memshop_id)
-                SELECT `product_id`, `product_name`,`product_image`,`product_price/piece`, `member_id1`, member_id
-                FROM `order` WHERE member_id1 = '".$_SESSION['id']."' " ;
-    $insert_spl = mysqli_query($conn, $insert);
-
-    $in_pay = "UPDATE `payment_check` SET `check_member_address1` = '$address', `pay_name` = '$name', pay_mobile = '$phone',`pay_money` = '$money', pay_image = '$picture', pay_bank = '$bank1', pay_date = '$date'
-                WHERE `check_member_id` = '".$_SESSION['id']."' ;";
-    $insert_pay = mysqli_query($conn, $in_pay);
-
-    if ($insert_spl) {
-        mysqli_query($conn, "DELETE FROM `order` WHERE member_id1 = '".$_SESSION['id']."' ");
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-    if($insert_pay){
-        move_uploaded_file($image_temp_name, $folder_image);
-    }
-
-    $insert_p = "INSERT INTO `check_product` ( ) " ;
+        $delete_query = "DELETE FROM alert WHERE payment_check_id = '$id'";
+        $result_delete = mysqli_query($conn, $delete_query) or die("Error: " . mysqli_error($conn));   
     
-
-    // header('location: index.php');
-}
+        if($insert_pay){
+            move_uploaded_file($image_temp_name, $folder_image);
+        }
+        if ($result_delete) {
+            header('location: alert.php');
+        } else {
+            echo "Error deleting record: " . mysqli_error($conn);
+        } 
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,10 +38,7 @@ if(isset($_POST['conf'])){
     <title>paymentConfirmation</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-
 <?php include 'header.php'; ?>
 
 <form method="post" enctype="multipart/form-data">
@@ -85,7 +71,6 @@ if(isset($_POST['conf'])){
                     <div>
                         <label class=" text-white" for="date">วันที่โอน : </label>
                         <input type="date" name="date" required>
-
                     </div>
                 </div>
             </div>
@@ -106,24 +91,14 @@ if(isset($_POST['conf'])){
                         output.onload = function() {
                             URL.revokeObjectURL(output.src) // free memory
                         }
-                    };
+                    }
                 </script>
             </div>
         </div>
-        <!-- <div class=" ml-80 bg-amber-600 w-24 h-10  rounded-lg  mt-10"> -->
-           <!-- <a href="index.php"> -->
-                <button name="conf" type="submit" class="bg-amber-600 ml-80 mt-10 w-24 h-10 rounded-lg text-center mt-2">ยืนยันคำสั่งซื้อ</button>
-            <!-- </a>  -->
-        <!-- </div> -->
-
-    </div>
+    <button name="conf" type="submit" class="bg-amber-600 ml-80 mt-10 w-24 h-10 rounded-lg text-center mt-2">ยืนยันหลักฐานการชำระเงิน</button>
 </form>
-                    
+    </div>
+</form>             
     <?php include 'footer.php'; ?>
-
-
-
-
 </body>
-
 </html>

@@ -29,9 +29,9 @@ session_start();
 							
 						
 				?>
-            <div class="flex shadow-lg p-2 bg-white">
+            <div class="flex shadow-lg p-2 bg-slate-800 rounded-lg" style="width: 500px;">
                 <img src="images/<?php echo $row['member_image']; ?>" width="85" height="85">
-                <p  class="m-2">
+                <p  class="m-2 text-white">
                     ชื่อผู้ใช้ : <?php echo $row['member_name']; ?>
                     <br> email address : <?php echo $row['member_email']; ?>
                 </p>
@@ -48,6 +48,7 @@ session_start();
                 </div>
 
             </div>
+    
 
             <?php 
                         }

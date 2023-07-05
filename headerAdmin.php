@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
-<style>
+<!-- <style>
     body {
         /* background-color: #e09129 !important; */
         background-image:url("images/back3.jpg");
@@ -22,7 +22,7 @@
         
 
     }
-</style>
+</style> -->
 
   
 <header id="header" class=" bg-white bg-opacity-5 shadow-lg rounded" style="background-color: white;">

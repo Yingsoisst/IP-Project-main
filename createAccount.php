@@ -15,25 +15,25 @@ require_once('server.php');
 <style>
     body {
         /* background-color: #e09129 !important; */
-        background-image:url("images/back3.jpg");
+        background-image:url("../images/back3.jpg");
         background-size: 1520px 1100px;
         backdrop-filter: blur(5px);
     }
 </style>
     <div class="bg-neutral-500  ml-56 mt-8  shadow-inner rounded-md flex flex-row drop-shadow-lg" style="width: 1000px;height: 650px;">
         
-        <div class="bg-amber-700 rounded-l-lg" style="width: 500px; height: 650px;">
-            <h1 class="text-orange-200 flex justify-center pt-10  font-bold" style="font-size: 60px;">Welcome</h1>
-            <h1 class="text-orange-200 flex justify-center   font-bold" style="font-size: 30px;">to</h1>
-            <h1 class="text-orange-200 flex justify-center  pb-3 font-bold" style="font-size: 50px;">2MTrade</h1>
+        <div class="bg-slate-800 rounded-l-lg" style="width: 500px; height: 650px;">
+            <h1 class=" text-white flex justify-center pt-10  font-bold" style="font-size: 60px;">Welcome</h1>
+            <h1 class="text-white flex justify-center   font-bold" style="font-size: 30px;">to</h1>
+            <h1 class= "text-white flex justify-center  pb-3 font-bold" style="font-size: 50px;">2MTrade</h1>
         
             <div class="flex justify-center mt-64">
-                <button class="rounded-md bg-orange-200 hover:bg-orange-100 text-amber-700  hover:text-black" style="width: 150px;height: 50px; font-size: 20px; font-bold" onclick="window.location.href='signIn.php'">Sign in</button>
+                <button class="rounded-md bg-slate-300 hover:bg-slate-800 text-black  hover:text-white" style="width: 150px;height: 50px; font-size: 20px; font-bold" onclick="window.location.href='signIn.php'">Sign in</button>
             </div>
         </div>
       <form action="createAccount_db.php" method="post">
-        <div class="bg-orange-200 rounded-r-lg " style="width: 500px; height: 650px;">
-            <h1 class="text-orange-900 flex justify-center pt-10 pb-10 font-bold" style="font-size: 50px;">Create Account</h1>
+        <div class=" bg-slate-300 rounded-r-lg " style="width: 500px; height: 650px;">
+            <h1 class=" text-black flex justify-center pt-10 pb-10 font-bold" style="font-size: 50px;">Create Account</h1>
             <div class="flex justify-center" style="color: red;">
                 <?php if (isset($_SESSION['error'])) : ?>
                     <div class="error">
@@ -75,7 +75,7 @@ require_once('server.php');
             
             
             <div class="flex justify-center ">
-                <button class=" rounded-md bg-amber-900 hover:bg-amber-700 text-white hover:text-black " type="submit" name="submit" style=" width: 150px;height: 50px; font-size: 20px; font-bold" onclick="">Create Account</button>
+                <button class=" rounded-md bg-slate-800 hover:bg-slate-800 text-white hover:text-white" type="submit" name="submit" style=" width: 150px;height: 50px; font-size: 20px; font-bold" onclick="">Create Account</button>
             </div>
         </div>
       </form>

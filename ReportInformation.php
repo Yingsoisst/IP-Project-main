@@ -24,18 +24,18 @@ $result1 = mysqli_query($conn, $query1);
 <body>
 <?php include 'headerAdmin.php'; ?>
 
-<div class="max-w-4xl p-6 mx-auto rounded-md shadow-md bg-orange-200 mt-10 mb-10 ">
+<div class="max-w-4xl p-6 mx-auto shadow-md bg-slate-800 rounded-lg mt-10 mb-10 ">
     <div class=" m-5 rounded-md">
         <div class="flex justify-center">
         <?php 
-					##$select = mysqli_query($conn, "SELECT * FROM `report`") or die('query failed');
-					##if (mysqli_num_rows($select) > 0) {
-						##while ($row = mysqli_fetch_assoc($select)) {
+					$select = mysqli_query($conn, "SELECT * FROM `report`WHERE report_id = $id ") or die('query failed');
+					if (mysqli_num_rows($select) > 0) {
+						while ($row = mysqli_fetch_assoc($select)) {
 							
 						
 				?>
             <img class="rounded-md" src="images/<?php echo $row['member_image']; ?>" width="100" height="100">
-            <p  class="m-2">
+            <p  class="m-2 text-white">
                 ชื่อผู้ใช้ : <?php echo $row1['member_name']; ?><br>
                 Email : <?php echo $row1['member_email']; ?>
                 <br> 
@@ -43,10 +43,10 @@ $result1 = mysqli_query($conn, $query1);
         </div>
 
     </div>
-    <div><p class="mx-5">รายละเอียดการรายงาน :</p></div>
+    <div><p class="mx-5 text-white">รายละเอียดการรายงาน :</p></div>
     <div class="container mx-auto p-5 border-2 grid place-items-center ">
         <div class=""> 
-            <p>
+            <p class=" text-white">
             <?php echo $row1['message']; ?>
             </p>
         </div>
@@ -73,12 +73,8 @@ $result1 = mysqli_query($conn, $query1);
 
 </div>
     
-   
-    <?php 
-                 ##       }
-                  ##  }
-                        
-				?>
+   <?php } }?>
+
                 <?php include 'footer.php'; ?>
 
 </body>

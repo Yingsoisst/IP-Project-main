@@ -43,6 +43,8 @@ $row = mysqli_fetch_array($sql);
                 <th class="border border-slate-600 px-4 py-4">ID</th>
                 <th class="border border-slate-600 px-4 py-4">member id</th>
                 <th class="border border-slate-600 px-4 py-4">Product image</th>
+                <th class="border border-slate-600 px-4 py-4">Product image2</th>
+                <th class="border border-slate-600 px-4 py-4">Product image3</th>
                 <th class="border border-slate-600 px-4 py-4">Product name</th>
                 <th class="border border-slate-600 px-4 py-4">information</th>
                 <th class="border border-slate-600 px-2 py-4">category</th>
@@ -63,6 +65,8 @@ $row = mysqli_fetch_array($sql);
                     <td class="border border-slate-600 px-4"><?php echo $row['product_id_check']; ?></td>
                     <td class="border border-slate-600 px-4"><?php echo $row['check_member_id']; ?></td>
 					<td class="border border-slate-600 px-6 py-4"><img class="object-scale-down h-30 w-20" src="images/<?php echo $row['check_product_image']; ?>"></td>
+                    <td class="border border-slate-600 px-6 py-4"><img class="object-scale-down h-30 w-20" src="images/<?php echo $row['check_product_image2']; ?>"></td>
+                    <td class="border border-slate-600 px-6 py-4"><img class="object-scale-down h-30 w-20" src="images/<?php echo $row['check_product_image3']; ?>"></td>
 					<td class="border border-slate-600 px-4"><?php echo $row['check_product_name']; ?></td>
                     <td class="border border-slate-600 px-4"><?php echo $row['check_product_inf.']; ?></td>
                     <td class="border border-slate-600 px-4"><?php echo $row['check_category_product']; ?></td>

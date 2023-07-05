@@ -14,29 +14,29 @@ $row1 = mysqli_fetch_array($sql);
 </head> 
 <body>
 <?php include 'headerAdmin.php'; ?>
-    <div class=" w-auto m-10 grid justify-items-center">
+    <div class="  bg-white w-auto m-10 grid justify-items-center rounded-lg ">
         <div class="border border-1 shadow-md m-3 p-2 rounded-full">
             <img class="w-40 h-40" src="images/logo.png" >
         </div>       
     </div>
-    <div class= "bg-orange-200 w-auto  flex  text-center text-xl ">
-        <div class="p-5 flex-1 grid grid-cols-1 justify-items-center " >
-            <a href="checkgoods.php">ตรวจสอบสินค้า</a>
+    <div class= " bg-slate-800 w-auto  flex  text-center text-xl ml-36 rounded-t-lg border-2 border-stone-50"  style="width: 1200px;">
+        <div class="p-5 flex-1 grid grid-cols-1 justify-items-center  " >
+            <a href="checkgoods.php" class=" text-white">ตรวจสอบสินค้า</a>
             <a href="checkgoods.php"><img src="images/check.png" class="m-2" width="40" height="40"></a>
         </div>
-        <div class="p-5 flex-1 bg-amber-700 grid grid-cols-1 justify-items-center">
+        <div class="p-5 flex-1 bg-slate-300 grid grid-cols-1 justify-items-center border-2 border-stone-800">
             <a href="CheckReport.php">ตรวจสอบการรายงาน</a>
             <a href="CheckReport.php"><img src="images/edit.png" class="m-2" width="40" height="40"></a>
         </div>
-        <div class="p-5  flex-1 grid grid-cols-1 justify-items-center">
-            <a href="checkpayment.php">ตรวจสอบการชำระเงิน</a>
+        <div class="p-5  flex-1 grid grid-cols-1 justify-items-center ">
+            <a href="checkpayment.php" class=" text-white">ตรวจสอบการชำระเงิน</a>
             <a href="checkpayment.php"><img src="images/document.png" class="m-2" width="40" height="40"></a>
         </div>
 
     </div>
-    <div class="bg-orange-300 h-fit">
+    <div class="bg-slate-800 h-fit ml-36 rounded-b-lg border-2 border-stone-50" style="width: 1200px;">
         <div class="grid grid-cols-1 justify-items-center text-2xl text-center p-10">
-            <a href="statistics.php">สถิติรวมของเว็บไซต์</a>
+            <a href="statistics.php" class=" text-white">สถิติรวมของเว็บไซต์</a>
             <a href="statistics.php"><img src="images/chart-histogram.png" class="m-2" width="40" height="40"></a>
         </div>
     </div>

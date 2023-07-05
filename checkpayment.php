@@ -15,24 +15,23 @@ $row = mysqli_fetch_array($sql);
 <body>
 <?php include 'headerAdmin.php'; ?>
 
-    <div class=" ml-20 ">
-    <div class="grid grid-cols-2 mx-5 my-3 p-5 " >
-        <?php 
-					$select = mysqli_query($conn, "SELECT * FROM `paymentnoti`") or die('query failed');
+    <div class=" ml-3  ">
+    <div class="grid grid-cols-2 mx-5 my-3 p-5 bg-slate-800 text-white rounded " >
+    <?php 
+					$select = mysqli_query($conn, "SELECT * FROM `payment_check`") or die('query failed');
 					if (mysqli_num_rows($select) > 0) {
 						while ($row = mysqli_fetch_assoc($select)) {
 							
-						
 				?>
             <div class="flex shadow-lg p-2 ">
-                <img src="images/<?php echo $row['pay_image']; ?>" width="85" height="85">
-                <p  class="m-2">
-                    ชื่อผู้ใช้ : <?php echo $row['pay_name']; ?>
-                    <br> เลขใบสั่งซื้อ : <?php echo $row['pay_id']; ?>
+                <img class="rounded" src="images/<?php echo $row['pay_image']; ?>" width="85" height="85">
+                <p  class="m-2 ml-5 mt-4">
+                    รหัสผู้ใช้ : <?php echo $row['check_member_id']; ?>
+                    <br> รหัสตรวจสอบการชำระเงิน : <?php echo $row['payment_check_id']; ?>
                 </p>
 
-                <div class="bg-amber-300 shadow-lg shadow-amber-200/50 flex-none rounded-full p-2 my-auto mx-3 justify-items-end" >
-                    <a href="paymentinf.php?id=<?php echo $row['pay_id']; ?>">
+                <div class="bg-amber-300 shadow-lg shadow-amber-200/50 flex-none rounded-full p-2 my-auto  ml-5 justify-items-end " >
+                    <a href="paymentinf.php?id=<?php echo $row['payment_check_id']; ?>">
                         ตรวจสอบ
                     </a>
                 </div>

@@ -68,10 +68,10 @@ session_start();
 <body>
 <?php include 'header.php'; ?>
 
-    <div class="bg-amber-900 m-8 rounded-md ">
+    <div class=" m-8 rounded-md ">
                
                     <div class=" flex justify-center  py-8">
-                        <div class ="bg-white  rounded-md " style="height: 600px;width: 450px;" >
+                        <div class =" bg-white  rounded-md  shadow mt-1 border-2 border-stone-950 " style="height: 600px;width: 450px;" >
                             <div class="flex flex-col gap-y-5" style="display: flex; justify-content: center; align-items: center;">
                                 <div class="text-black font-bold text-3xl mt-8 ">Mtrade | ช่วยเหลือ</div>  
                                     <form method="POST" enctype="multipart/form-data"><br><br>
